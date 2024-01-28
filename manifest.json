@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Wordle in One",
+  "description": "Solve today's Wordle in one guess",
+  "version": "1.0",
+  "permissions": ["tabs", "webRequest", "tabs"],
+  "host_permissions": [
+    "https://www.nytimes.com/games/wordle/index.html",
+    "https://www.nytimes.com/svc/wordle/v2/*"
+  ],
+  "content_scripts": [
+    {
+      "js": ["scripts/solve.js"],
+      "matches": ["https://www.nytimes.com/games/wordle/index.html"]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {}
+}
